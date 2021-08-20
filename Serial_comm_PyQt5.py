@@ -55,6 +55,7 @@ class Window(QWidget):
         self.mainLayout.addWidget(self.formGroupBox)
         self.mainLayout.addWidget(self.buttonBox)
         self.mainLayout.addWidget(self.formGroupBox_1)
+        
         self.buttonBox.accepted.connect(self.add_form)
         self.win.setLayout(self.mainLayout)
 
@@ -66,6 +67,7 @@ class Window(QWidget):
                             baudrate=int(serial_port_para['baudrate']),
                             stopbits=serial.STOPBITS_ONE,
                             bytesize=8, timeout=2)
+        
         def count():
             data = self.serialPort.readline()
             data1 = data[:-2].decode("utf-8")
